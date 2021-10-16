@@ -11,11 +11,11 @@ export function App(props) {
 	const [iris, setIris] = useState();
 	return (
 		<IrisContext.Provider value={{ iris, setIris }}>
-			<Router>
+			<Router >
 				<Header />
 				<div className='container'>
 					<Switch>
-						<Route exact path='/iris'>
+						<Route exact path='/'>
 							<div className='row'>
 								<div className='col-7'>
 									<Table />

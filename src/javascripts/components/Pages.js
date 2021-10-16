@@ -47,7 +47,7 @@ export function Setosa(props) {
                 </tr>
               </tbody>
 						</table>
-            <button className='my-3 purplebutton' onClick={() => history.push('/iris')}>Back to the main iris dataset page</button>
+            <button className='my-3 purplebutton' onClick={() => history.push('/')}>Back to the main iris dataset page</button>
 					</div>
 				</div>
 			</div>
@@ -111,7 +111,7 @@ export function Versicolor() {
 						</table>
 						<button
 							className='my-3 purplebutton'
-							onClick={() => history.push('/iris')}>
+							onClick={() => history.push('/')}>
 							Back to the main iris dataset page
 						</button>
 					</div>
@@ -178,7 +178,7 @@ export function Virginica() {
 						</table>
 						<button
 							className='my-3 purplebutton'
-							onClick={() => history.push('/iris')}>
+							onClick={() => history.push('/')}>
 							Back to the main iris dataset page
 						</button>
 					</div>
