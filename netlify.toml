@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/iris*"
-  to = "/index.html"
+  from = "/*"
+  to = "/iris.html"
   status = 200
 
 [build.environment]
