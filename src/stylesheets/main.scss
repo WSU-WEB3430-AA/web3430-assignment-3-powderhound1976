@@ -1,2 +1,91 @@
 // Your styles go here
 @import "~bootstrap/scss/bootstrap";
+
+.fa-envira {
+  font-size: 5rem;
+  padding-top: 2rem;
+  color: lightgray;
+}
+
+h1 {
+  color: purple;
+}
+
+.footRight {
+  text-align: right;
+}
+
+footer {
+  border-top: purple 2px solid;
+  padding: 1rem;
+}
+
+.tableTitle {
+  font-size: 1.75rem;
+  color:purple;
+}
+
+.tableSubtitle {
+  color: grey;
+  font-size: 1.25rem;
+}
+
+.pagination > li > .page-link
+{
+    background-color: white;
+    color: purple;
+}
+
+.pagination > li > .page-link:focus,
+.pagination > li > .page-link:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > .page-link
+{
+    color: white;
+    background-color: #5A4181;
+    border: solid 1px #5A4181;
+}
+
+.pagination > .active > .page-link:hover
+{
+    background-color: #5A4181;
+    border: solid 1px #5A4181;
+}
+
+
+
+th > img {
+    padding:.3rem;
+    object-fit: scale-down;
+    max-height: 105px;
+    
+  }
+
+.bglight {
+  background-color: rgb(235, 235, 235);
+  border-radius: 1rem;
+  min-height: 100%;
+  padding: 1em;
+
+  
+}
+
+.sidetable {
+  max-width: 100%;
+}
+
+.purplebutton {
+    background-color: purple;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: .5em;
+    max-width: fit-content;
+  }
