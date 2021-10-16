@@ -8,7 +8,17 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export const IrisContext = createContext();
 export function App(props) {
+	
+
+  
 	const [iris, setIris] = useState();
+  useEffect(() => {
+		fetch('/iris.dat')
+			.then(response => response.json())
+			.then(setIris)
+			.catch(console.error);
+  }, []);
+  
 	return (
 		<IrisContext.Provider value={{ iris, setIris }}>
 			<Router >

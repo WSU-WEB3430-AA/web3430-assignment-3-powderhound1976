@@ -1,6 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { IrisContext } from './App';
+
+
 import { useHistory } from 'react-router-dom';
 export function Summary(props) {
+  const { iris, setIris } = useContext(IrisContext);
   const history = useHistory();
 	return (
 		<div className='bglight'>
@@ -53,7 +57,10 @@ export function Summary(props) {
 						<td>
 							<strong>Count</strong>
 						</td>
-						<td>50</td>
+						<td>
+							
+							50
+						</td>
 						<td>50</td>
 						<td>50</td>
 					</tr>
@@ -62,13 +69,27 @@ export function Summary(props) {
 							<strong>Link</strong>
 						</td>
 						<td>
-							<button className='purplebutton' onClick={() => history.push('/iris/setosa')}>See more</button>
+							<button
+								className='purplebutton'
+								onClick={() => history.push('/iris/setosa')}>
+								See more
+							</button>
 						</td>
 						<td>
-							<button className='purplebutton' onClick={() => history.push('/iris/versicolor')}>See more</button>
+							<button
+								className='purplebutton'
+								onClick={() =>
+									history.push('/iris/versicolor')
+								}>
+								See more
+							</button>
 						</td>
 						<td>
-							<button className='purplebutton' onClick={() => history.push('/iris/virginica')}>See more</button>
+							<button
+								className='purplebutton'
+								onClick={() => history.push('/iris/virginica')}>
+								See more
+							</button>
 						</td>
 					</tr>
 				</tbody>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 import axios from 'axios';
 import { IrisContext } from './App';
@@ -7,32 +7,27 @@ const pageSize = 10;
 
 export function Table() {
   const {iris, setIris} = useContext(IrisContext)
-	const [posts, setposts] = useState();
-	const [paginatedPosts, setpaginatedPosts] = useState();
+	const [paginatedIriss, setpaginatedIriss] = useState();
 	const [currentPage, setcurrentPage] = useState(1);
 	useEffect(() => {
 		axios.get('/iris.dat').then(res => {
-			console.log(res.data);
-			setposts(res.data);
-      setIris(res.data);
-      console.log(iris)
-			setpaginatedPosts(_(res.data).slice(0).take(pageSize).value());
+			setpaginatedIriss(_(res.data).slice(0).take(pageSize).value());
 		});
 	}, []);
 
-	const pageCount = posts ? Math.ceil(posts.length / pageSize) : 0;
+	const pageCount = iris ? Math.ceil(iris.length / pageSize) : 0;
 	if (pageCount === 1) return null;
 	const pages = _.range(1, pageCount + 1);
 
 	const pagination = pageNo => {
 		setcurrentPage(pageNo);
 		const startIndex = (pageNo - 1) * pageSize;
-		const paginatedPost = _(posts).slice(startIndex).take(pageSize).value();
-    console.log(paginatedPost);
-		setpaginatedPosts(paginatedPost);
-    console.log(posts)
+		const paginatedIris = _(iris).slice(startIndex).take(pageSize).value();
+    console.log(paginatedIris);
+		setpaginatedIriss(paginatedIris);
+    console.log(iris)
 	};
-	if (!paginatedPosts) return <p>Loading...</p>;
+	if (!paginatedIriss) return <p>Loading...</p>;
 	return (
 		<>
 			<div className='container text-center'>
@@ -53,7 +48,7 @@ export function Table() {
 					</tr>
 				</thead>
 				<tbody>
-					{paginatedPosts.map((item, index) => (
+					{paginatedIriss.map((item, index) => (
 						<tr key={index}>
 							<td>{index + (currentPage * pageSize - 9)}</td>
 							<td>{item.sepalLength}</td>
